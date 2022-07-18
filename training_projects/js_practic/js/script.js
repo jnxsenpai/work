@@ -1,16 +1,23 @@
 "use strict";
 
-let number = 5;
-const leftBorderWidth = 1;
+let number = 4.6;
+console.log(-4/0);
+console.log('string' * 9);
 
-number = 10;
-console.log(number);
+const person = 'Alex';
+
+const bool = true;
+
+let und;
+console.log(und);
 
 const obj = {
-    a: 50
+    name: 'John',
+    age: 25,
+    isMarried: false
 };
 
-obj.a = 10;
-console.log(obj);
+console.log(obj.name);
 
-var name = 'Ivan';
+let arr = ['plum.png', 'orange.jpg', 'apple.bmp'];
+console.log(arr[1]);
