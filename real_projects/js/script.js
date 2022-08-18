@@ -2,7 +2,7 @@
 
 let numberOfFilms;
 
-function start() {
+function start() {  // узнает сколько фильмов просмотрено
     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
     while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
@@ -12,7 +12,7 @@ function start() {
 
 start();
 
-const personalMovieDB = {
+const personalMovieDB = { // объект со всеми данными
     count: numberOfFilms,
     movies: {},
     actors: {},
@@ -21,11 +21,11 @@ const personalMovieDB = {
 };
 
 
-function rememberMyFilms() {
+function rememberMyFilms() { //опрашивает и переносит просмотренные фильмы и их оценки в объект
     for (let i = 1; i<= numberOfFilms; i++) {
 
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
-            b = prompt('На сколько оцените его?', '');
+        const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
+            b = prompt('На сколько оцените его?', '').trim();
     
             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
                 personalMovieDB.movies[a] = b;
@@ -40,7 +40,7 @@ function rememberMyFilms() {
 rememberMyFilms();
 
 
-function detectPersonalLevel() {
+function detectPersonalLevel() { // дает ранг пользователю в зависимости от кол-ва фильмов
     if (personalMovieDB.count < 10){
         alert ('Просмотрено довольно мало фильмов');
     }
@@ -59,7 +59,7 @@ function detectPersonalLevel() {
 detectPersonalLevel();
 
 
-function showMyDB() {
+function showMyDB() { // проверяет объект с данными на приватность
     if (personalMovieDB.privat == false) {
         console.log(personalMovieDB);
     }
@@ -68,7 +68,7 @@ function showMyDB() {
 showMyDB();
 
 
-function writeYourGenres() {
+function writeYourGenres() { // спрашивает жанр и переносит в объект
     for (let i = 1; i<=3; i++) {
         personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`, '');
     }
