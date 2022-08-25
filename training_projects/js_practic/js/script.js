@@ -1,19 +1,15 @@
 "use strict";
 
-function getTimeFromMinutes(time) {
-    let hours = 0;
-    let minutes = 0;
-    let c = time;
-    if (Number.isInteger(time) !== true || time < 0) {
-        return "Ошибка, проверьте данные";
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
 
-    } else  {
-        hours = c / 60;
-        minutes = time % 60;
-       
-        
-    }
-    return console.log(`Это ${parseInt(hours)} часов, ${minutes} минут`);
-
+function sortStudentsByGroups(arr) {
+   const a = [],
+         b = [],
+         c = [];
+    arr.sort();
+    arr.forEach(function  (item) {
+        arr.slice(0,3);
+    });
 }
-getTimeFromMinutes(10);
+
+sortStudentsByGroups(students);
